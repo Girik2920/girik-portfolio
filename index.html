@@ -271,6 +271,43 @@
       background: var(--panel-soft);
     }
 
+    .portrait-card {
+      overflow: hidden;
+      padding: 0;
+      background:
+        linear-gradient(180deg, rgba(19, 27, 40, 0.96), rgba(12, 18, 28, 0.94));
+    }
+
+    .portrait-frame {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border-radius: 22px;
+    }
+
+    .portrait-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 55% 42%;
+      filter: saturate(1.02) contrast(1.02);
+      transform: scale(1.04);
+    }
+
+    .portrait-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(7, 11, 17, 0.08), rgba(7, 11, 17, 0.34) 72%, rgba(7, 11, 17, 0.62)),
+        radial-gradient(circle at top left, rgba(99, 168, 255, 0.14), transparent 36%);
+      pointer-events: none;
+    }
+
+    .portrait-copy {
+      padding: 1rem 1.05rem 1.1rem;
+    }
+
     .mini-label {
       display: inline-block;
       margin-bottom: 0.6rem;
@@ -582,15 +619,19 @@
       </div>
 
       <aside class="hero-side" aria-label="Highlights">
+        <div class="mini-card portrait-card">
+          <div class="portrait-frame">
+            <img src="profile-photo.jpg" alt="Portrait of Girik Tripathi">
+          </div>
+          <div class="portrait-copy">
+            <span class="mini-label">Profile</span>
+            <p>Software engineer interested in backend systems, platform infrastructure, and reliable cloud services.</p>
+          </div>
+        </div>
         <div class="mini-card">
           <span class="mini-label">Focus</span>
           <strong>Backend-first</strong>
           <p>Comfortable across services, infra, pipelines, and the reliability details that connect them.</p>
-        </div>
-        <div class="mini-card">
-          <span class="mini-label">Production Scale</span>
-          <strong>2 to 5 TB/month</strong>
-          <p>Worked on enterprise systems supporting heavy reporting and multi-team downstream usage.</p>
         </div>
         <div class="mini-card">
           <span class="mini-label">System Design</span>
