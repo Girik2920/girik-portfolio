@@ -4,25 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Girik Tripathi | Software Engineer</title>
-  <meta name="description" content="Portfolio of Girik Tripathi, a software engineer focused on backend systems, cloud platforms, distributed systems, and reliable infrastructure.">
+  <meta
+    name="description"
+    content="Portfolio of Girik Tripathi, a software engineer focused on backend systems, cloud infrastructure, distributed systems, and platform reliability."
+  >
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink: #171614;
-      --muted: #5e5a54;
-      --paper: #f7f2e9;
-      --card: rgba(255, 255, 255, 0.78);
-      --line: rgba(23, 22, 20, 0.1);
-      --accent: #b34922;
-      --accent-soft: rgba(165, 70, 34, 0.12);
-      --forest: #1f5b45;
-      --forest-soft: rgba(31, 91, 69, 0.12);
-      --navy: #1e4261;
-      --shadow: 0 18px 50px rgba(23, 22, 20, 0.08);
-      --radius: 22px;
-      --max: 1120px;
+      --bg: #0d1117;
+      --panel: rgba(12, 18, 28, 0.84);
+      --panel-strong: rgba(18, 25, 38, 0.96);
+      --panel-soft: rgba(255, 255, 255, 0.05);
+      --text: #ecf3ff;
+      --muted: #9eb0c9;
+      --line: rgba(161, 182, 214, 0.16);
+      --teal: #47d6b3;
+      --blue: #63a8ff;
+      --amber: #ffb86b;
+      --glow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --radius: 28px;
+      --max: 1180px;
     }
 
     * {
@@ -35,12 +38,13 @@
 
     body {
       margin: 0;
-      font-family: "DM Sans", sans-serif;
-      color: var(--ink);
+      font-family: "Space Grotesk", sans-serif;
+      color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(165, 70, 34, 0.18), transparent 24rem),
-        radial-gradient(circle at top right, rgba(31, 91, 69, 0.14), transparent 22rem),
-        linear-gradient(180deg, #fbf7f1 0%, var(--paper) 48%, #f4efe6 100%);
+        radial-gradient(circle at 10% 10%, rgba(71, 214, 179, 0.14), transparent 26rem),
+        radial-gradient(circle at 90% 15%, rgba(99, 168, 255, 0.16), transparent 28rem),
+        radial-gradient(circle at 50% 100%, rgba(255, 184, 107, 0.12), transparent 24rem),
+        linear-gradient(180deg, #090d14 0%, #0d1117 45%, #0b1017 100%);
       line-height: 1.6;
     }
 
@@ -53,16 +57,28 @@
       margin: 0 auto;
     }
 
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(12px);
-      background: rgba(247, 242, 233, 0.82);
-      border-bottom: 1px solid var(--line);
+    .mono,
+    .eyebrow,
+    .nav a,
+    .tag,
+    .pill,
+    .mini-label,
+    .meta,
+    .stack span,
+    .footer {
+      font-family: "IBM Plex Mono", monospace;
     }
 
-    .topbar-inner {
+    .chrome {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid var(--line);
+      background: rgba(9, 13, 20, 0.72);
+      backdrop-filter: blur(18px);
+    }
+
+    .chrome-inner {
       width: min(calc(100% - 2rem), var(--max));
       margin: 0 auto;
       min-height: 72px;
@@ -72,200 +88,196 @@
       gap: 1rem;
     }
 
-    .wordmark,
-    .nav,
-    .chip,
-    .metric-label,
-    .section-tag,
-    .project-links a,
-    .stack span,
-    .skill-title,
-    .footer-note {
-      font-family: "IBM Plex Mono", monospace;
-    }
-
-    .wordmark {
+    .brand {
       text-decoration: none;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       letter-spacing: 0.04em;
+      color: var(--text);
     }
 
     .nav {
       display: flex;
-      gap: 1.2rem;
+      gap: 1.15rem;
       flex-wrap: wrap;
       justify-content: flex-end;
     }
 
     .nav a {
       text-decoration: none;
+      font-size: 0.82rem;
       color: var(--muted);
-      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
 
     .hero {
-      padding: 5.5rem 0 2.75rem;
+      padding: 4.75rem 0 2rem;
       display: grid;
-      grid-template-columns: 1.25fr 0.95fr;
-      gap: 1.5rem;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.25rem;
       align-items: stretch;
     }
 
-    .hero-copy,
-    .hero-panel,
+    .panel,
+    .hero-primary,
+    .hero-side,
     .metric,
-    .card,
-    .contact-panel {
-      background: var(--card);
-      border: 1px solid rgba(255, 255, 255, 0.85);
-      box-shadow: var(--shadow);
+    .contact {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--glow);
       border-radius: var(--radius);
     }
 
-    .hero-copy {
-      padding: 2.75rem;
+    .hero-primary {
+      position: relative;
+      overflow: hidden;
+      padding: 2.5rem;
+      background:
+        linear-gradient(135deg, rgba(99, 168, 255, 0.08), rgba(71, 214, 179, 0.06)),
+        linear-gradient(180deg, rgba(18, 25, 38, 0.96), rgba(10, 15, 24, 0.96));
     }
 
-    .section-tag {
-      display: inline-block;
-      padding: 0.45rem 0.8rem;
+    .hero-primary::after {
+      content: "";
+      position: absolute;
+      inset: auto -5rem -5rem auto;
+      width: 18rem;
+      height: 18rem;
       border-radius: 999px;
-      font-size: 0.76rem;
-      letter-spacing: 0.08em;
+      background: radial-gradient(circle, rgba(99, 168, 255, 0.14), transparent 68%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      color: var(--teal);
+      font-size: 0.75rem;
       text-transform: uppercase;
-      background: var(--accent-soft);
-      color: var(--accent);
+      letter-spacing: 0.12em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 999px;
+      background: currentColor;
+      box-shadow: 0 0 18px rgba(71, 214, 179, 0.8);
     }
 
     h1 {
-      margin: 1.25rem 0 1rem;
-      font-size: clamp(3rem, 8vw, 5.5rem);
+      margin: 1rem 0 1rem;
+      font-size: clamp(3.2rem, 8vw, 6rem);
       line-height: 0.94;
-      letter-spacing: -0.05em;
+      letter-spacing: -0.06em;
+      max-width: 11ch;
     }
 
     .lede {
-      max-width: 41rem;
-      font-size: 1.08rem;
+      max-width: 42rem;
+      margin: 0 0 1.6rem;
       color: var(--muted);
-      margin-bottom: 1.5rem;
+      font-size: 1.08rem;
     }
 
-    .availability {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.7rem 1rem;
-      border-radius: 999px;
-      background: var(--forest-soft);
-      color: var(--forest);
-      font-weight: 500;
-      margin-bottom: 1.75rem;
-    }
-
-    .pulse {
-      width: 0.7rem;
-      height: 0.7rem;
-      border-radius: 999px;
-      background: currentColor;
-      box-shadow: 0 0 0 0 rgba(31, 91, 69, 0.35);
-      animation: pulse 2.2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(31, 91, 69, 0.35); }
-      70% { box-shadow: 0 0 0 14px rgba(31, 91, 69, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(31, 91, 69, 0); }
-    }
-
+    .callouts,
     .actions,
-    .chip-row,
     .metrics,
-    .project-links,
     .stack,
+    .quick-grid,
     .contact-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.8rem;
+      gap: 0.75rem;
+    }
+
+    .tag,
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+    }
+
+    .tag {
+      padding: 0.5rem 0.78rem;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .pill {
+      padding: 0.68rem 0.95rem;
+      background: rgba(71, 214, 179, 0.12);
+      color: var(--teal);
+      margin: 0 0 1.4rem;
     }
 
     .button,
-    .ghost {
+    .button-ghost {
       text-decoration: none;
-      border-radius: 999px;
-      padding: 0.9rem 1.2rem;
+      padding: 0.92rem 1.18rem;
+      border-radius: 16px;
       font-weight: 500;
-      transition: transform 150ms ease, background 150ms ease;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
     }
 
     .button {
-      background: var(--ink);
-      color: #fff;
+      background: linear-gradient(135deg, var(--teal), #3ec8ff);
+      color: #071017;
     }
 
-    .ghost {
+    .button-ghost {
       border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.55);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
     }
 
     .button:hover,
-    .ghost:hover,
+    .button-ghost:hover,
     .project-links a:hover,
     .contact-link:hover {
       transform: translateY(-2px);
     }
 
-    .chip-row {
-      margin: 1.5rem 0 2rem;
-    }
-
-    .chip {
-      border-radius: 999px;
-      font-size: 0.78rem;
-      padding: 0.45rem 0.7rem;
-      background: rgba(255, 255, 255, 0.75);
-      border: 1px solid var(--line);
-      color: var(--muted);
-    }
-
-    .hero-panel {
-      padding: 1.4rem;
+    .hero-side {
+      padding: 1.15rem;
       display: grid;
-      gap: 1rem;
-      align-content: space-between;
-      min-height: 100%;
+      gap: 0.95rem;
       background:
-        linear-gradient(160deg, rgba(255,255,255,0.86), rgba(255,255,255,0.6)),
-        linear-gradient(145deg, rgba(179,73,34,0.12), rgba(30,66,97,0.08));
+        linear-gradient(180deg, rgba(18, 25, 38, 0.96), rgba(12, 18, 28, 0.9));
     }
 
-    .hero-panel h2 {
-      margin: 0;
-      font-size: 1.1rem;
-    }
-
-    .hero-panel p {
-      margin: 0.5rem 0 0;
-      color: var(--muted);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.9rem;
-    }
-
-    .mini {
-      padding: 1rem;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.82);
+    .mini-card {
+      border-radius: 22px;
+      padding: 1.1rem;
       border: 1px solid var(--line);
+      background: var(--panel-soft);
     }
 
-    .mini strong {
+    .mini-label {
+      display: inline-block;
+      margin-bottom: 0.6rem;
+      color: var(--muted);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+    }
+
+    .mini-card strong {
       display: block;
-      font-size: 1.1rem;
-      margin-bottom: 0.35rem;
+      font-size: 1.7rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .mini-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
     }
 
     .metrics {
@@ -273,45 +285,45 @@
     }
 
     .metric {
-      flex: 1 1 210px;
+      flex: 1 1 220px;
       padding: 1.2rem 1.25rem;
+      background: linear-gradient(180deg, rgba(18, 25, 38, 0.94), rgba(12, 18, 28, 0.88));
     }
 
     .metric strong {
       display: block;
-      font-size: 2rem;
-      margin-bottom: 0.2rem;
+      font-size: 2.1rem;
+      margin-bottom: 0.15rem;
     }
 
-    .metric-label {
+    .metric span {
+      display: block;
       color: var(--muted);
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+      font-size: 0.9rem;
     }
 
-    section.block {
-      padding: 1.5rem 0 0.5rem;
+    section {
+      padding: 1.45rem 0 0.4rem;
     }
 
     .section-head {
       display: flex;
-      align-items: baseline;
+      align-items: end;
       justify-content: space-between;
       gap: 1rem;
-      margin: 2rem 0 1rem;
+      margin: 1.8rem 0 1rem;
     }
 
     .section-head h2 {
       margin: 0;
-      font-size: clamp(1.7rem, 4vw, 2.4rem);
-      letter-spacing: -0.04em;
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      letter-spacing: -0.05em;
     }
 
     .section-head p {
-      max-width: 34rem;
-      color: var(--muted);
       margin: 0;
+      color: var(--muted);
+      max-width: 40rem;
     }
 
     .timeline,
@@ -322,183 +334,201 @@
       gap: 1rem;
     }
 
-    .timeline .card {
-      padding: 1.5rem;
+    .timeline .panel {
+      padding: 1.4rem 1.45rem;
       display: grid;
       grid-template-columns: 12rem 1fr;
-      gap: 1.5rem;
+      gap: 1.4rem;
     }
 
-    .eyebrow {
+    .meta {
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
 
-    .role {
-      font-size: 1.2rem;
+    h3 {
       margin: 0 0 0.7rem;
+      font-size: 1.2rem;
     }
 
     ul {
-      padding-left: 1.1rem;
       margin: 0;
+      padding-left: 1rem;
     }
 
     li + li {
-      margin-top: 0.55rem;
+      margin-top: 0.45rem;
     }
 
     .projects {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .project-wide {
+    .wide {
       grid-column: 1 / -1;
     }
 
-    .card {
-      padding: 1.6rem;
+    .panel {
+      padding: 1.5rem;
+      background: linear-gradient(180deg, rgba(18, 25, 38, 0.94), rgba(12, 18, 28, 0.88));
     }
 
     .project-top {
       display: flex;
-      gap: 1rem;
+      align-items: start;
       justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 1rem;
+      gap: 1rem;
+      margin-bottom: 0.8rem;
     }
 
-    .project-top h3,
-    .education h3 {
+    .project-top p {
       margin: 0;
-      font-size: 1.2rem;
+      color: var(--muted);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
     }
 
     .project-links a {
       text-decoration: none;
-      font-size: 0.8rem;
-      padding: 0.45rem 0.7rem;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.72);
+      background: rgba(255, 255, 255, 0.04);
+      padding: 0.45rem 0.75rem;
+      font-size: 0.76rem;
+      transition: transform 160ms ease, border-color 160ms ease;
+    }
+
+    .stack {
+      margin-top: 1rem;
     }
 
     .stack span {
-      font-size: 0.78rem;
-      padding: 0.42rem 0.65rem;
+      padding: 0.45rem 0.72rem;
       border-radius: 999px;
-      background: rgba(30, 66, 97, 0.08);
-      color: var(--navy);
+      background: rgba(99, 168, 255, 0.1);
+      color: #cfe3ff;
+      font-size: 0.75rem;
+    }
+
+    .quick-grid {
+      margin-top: 0.9rem;
+    }
+
+    .quick-grid .tag {
+      background: rgba(255, 255, 255, 0.03);
     }
 
     .skills {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .skill-title {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      margin-bottom: 0.9rem;
-    }
-
-    .education {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .contact-panel {
+    .contact {
       margin: 2rem 0 4rem;
-      padding: 1.8rem;
+      padding: 1.7rem;
       display: grid;
-      grid-template-columns: 1.1fr 1fr;
+      grid-template-columns: 1.05fr 1fr;
       gap: 1.5rem;
-      align-items: center;
+      background:
+        linear-gradient(135deg, rgba(99, 168, 255, 0.08), rgba(71, 214, 179, 0.06)),
+        linear-gradient(180deg, rgba(18, 25, 38, 0.96), rgba(10, 15, 24, 0.94));
     }
 
-    .contact-panel h2 {
+    .contact h2 {
       margin: 0 0 0.7rem;
-      font-size: clamp(1.8rem, 5vw, 3rem);
-      letter-spacing: -0.04em;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      letter-spacing: -0.05em;
     }
 
-    .contact-panel p {
+    .contact p {
       margin: 0;
       color: var(--muted);
-      max-width: 32rem;
+      max-width: 35rem;
     }
 
     .contact-links {
       justify-content: flex-end;
+      align-content: start;
     }
 
     .contact-link {
+      min-width: 13rem;
       text-decoration: none;
-      padding: 0.95rem 1rem;
-      min-width: 12rem;
-      border-radius: 18px;
+      border-radius: 20px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,0.72);
+      background: rgba(255, 255, 255, 0.04);
+      padding: 0.95rem 1rem;
+      transition: transform 160ms ease;
     }
 
     .contact-link strong {
       display: block;
-      margin-bottom: 0.15rem;
+      margin-bottom: 0.18rem;
     }
 
-    .footer-note {
-      padding: 0 0 3rem;
-      font-size: 0.82rem;
+    .contact-link span {
       color: var(--muted);
+      font-size: 0.94rem;
     }
 
-    @media (max-width: 900px) {
+    .footer {
+      color: var(--muted);
+      font-size: 0.78rem;
+      padding-bottom: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    @media (max-width: 920px) {
       .hero,
-      .contact-panel,
-      .timeline .card {
+      .contact,
+      .timeline .panel {
         grid-template-columns: 1fr;
       }
 
       .projects,
-      .skills,
-      .education,
-      .hero-grid {
+      .skills {
         grid-template-columns: 1fr;
       }
 
       .contact-links {
         justify-content: flex-start;
       }
-
-      .topbar-inner {
-        padding: 0.8rem 0;
-        align-items: flex-start;
-      }
     }
 
-    @media (max-width: 620px) {
-      .hero-copy,
-      .hero-panel,
-      .card,
-      .contact-panel,
-      .metric {
-        padding: 1.25rem;
+    @media (max-width: 640px) {
+      .chrome-inner {
+        padding: 0.8rem 0;
+        align-items: start;
       }
 
       .hero {
-        padding-top: 3.2rem;
+        padding-top: 3.1rem;
       }
 
-      .nav {
-        gap: 0.8rem;
+      .hero-primary,
+      .hero-side,
+      .panel,
+      .metric,
+      .contact {
+        padding: 1.2rem;
+      }
+
+      h1 {
+        font-size: clamp(2.6rem, 14vw, 4rem);
       }
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="wordmark" href="#top">Girik Tripathi</a>
+  <header class="chrome">
+    <div class="chrome-inner">
+      <a class="brand mono" href="#top">Girik Tripathi</a>
       <nav class="nav" aria-label="Primary">
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
@@ -510,62 +540,51 @@
 
   <main class="shell" id="top">
     <section class="hero">
-      <div class="hero-copy">
-        <span class="section-tag">Software Engineer | Backend | Platform</span>
-        <h1>Shipping backend systems that scale, recover, and stay maintainable.</h1>
+      <div class="hero-primary">
+        <span class="eyebrow">Software Engineer | Backend | Platform</span>
+        <h1>Building software that holds up in production.</h1>
         <p class="lede">
-          I am Girik Tripathi, a software engineer focused on backend development, platform engineering, and distributed
-          systems. My work centers on event-driven services, cloud infrastructure, internal tooling, and production
-          reliability. I am targeting software engineering roles starting in May 2026.
+          I am Girik Tripathi, a software engineer focused on backend development, platform infrastructure, and
+          distributed systems. I like building services that stay understandable as they grow and operationally reliable
+          when real traffic, failures, and complexity show up.
         </p>
-        <div class="availability">
-          <span class="pulse" aria-hidden="true"></span>
-          Open to software engineering roles for May 2026
-        </div>
-        <div class="chip-row" aria-label="Core technologies">
-          <span class="chip">AWS</span>
-          <span class="chip">Python</span>
-          <span class="chip">Distributed Systems</span>
-          <span class="chip">Backend APIs</span>
-          <span class="chip">Kinesis</span>
-          <span class="chip">Lambda</span>
-          <span class="chip">Platform Engineering</span>
-          <span class="chip">Terraform</span>
-          <span class="chip">CI/CD</span>
+        <div class="pill">Targeting software engineering, backend, and platform roles for May 2026</div>
+        <div class="callouts">
+          <span class="tag">Python</span>
+          <span class="tag">AWS</span>
+          <span class="tag">Backend APIs</span>
+          <span class="tag">Distributed Systems</span>
+          <span class="tag">Terraform</span>
+          <span class="tag">CI/CD</span>
+          <span class="tag">Observability</span>
         </div>
         <div class="actions">
-          <a class="button" href="https://www.linkedin.com/in/girik-tripathi29/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="ghost" href="https://github.com/Girik2920" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="ghost" href="mailto:girik29@umd.edu">Email</a>
+          <a class="button" href="https://github.com/Girik2920" target="_blank" rel="noreferrer">View GitHub</a>
+          <a class="button-ghost" href="https://www.linkedin.com/in/girik-tripathi29/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="button-ghost" href="mailto:girik29@umd.edu">Email</a>
         </div>
       </div>
 
-      <aside class="hero-panel" aria-label="Highlights">
-        <div>
-          <span class="section-tag">Snapshot</span>
-          <h2>Backend and platform engineer with cloud systems experience.</h2>
-          <p>
-            I care about resilient system design, readable implementation, and the operational details that keep
-            production software stable after launch.
-          </p>
+      <aside class="hero-side" aria-label="Highlights">
+        <div class="mini-card">
+          <span class="mini-label">Engineer Profile</span>
+          <strong>Backend-first</strong>
+          <p>Comfortable across services, infra, pipelines, and the reliability details that connect them.</p>
         </div>
-        <div class="hero-grid">
-          <div class="mini">
-            <strong>2 to 5 TB/month</strong>
-            Enterprise-scale data systems supported in production.
-          </div>
-          <div class="mini">
-            <strong>20+ consumers</strong>
-            Downstream systems depending on shared platform services.
-          </div>
-          <div class="mini">
-            <strong>99.9% SLA</strong>
-            Reliability target achieved in orchestration-focused project work.
-          </div>
-          <div class="mini">
-            <strong>35% lower latency</strong>
-            Measured performance improvement in production reporting flows.
-          </div>
+        <div class="mini-card">
+          <span class="mini-label">Production Scale</span>
+          <strong>2 to 5 TB/month</strong>
+          <p>Worked on enterprise systems supporting heavy reporting and multi-team downstream usage.</p>
+        </div>
+        <div class="mini-card">
+          <span class="mini-label">System Design</span>
+          <strong>20+ dependents</strong>
+          <p>Designed and improved shared platform flows used by many downstream consumers.</p>
+        </div>
+        <div class="mini-card">
+          <span class="mini-label">Reliability</span>
+          <strong>99.9% SLA</strong>
+          <p>Project work centered on orchestration, retries, fault handling, and operational resilience.</p>
         </div>
       </aside>
     </section>
@@ -573,63 +592,66 @@
     <div class="metrics" aria-label="Impact metrics">
       <div class="metric">
         <strong>35%</strong>
-        <span class="metric-label">Latency improvement</span>
+        <span>Latency improvement in production reporting workflows</span>
       </div>
       <div class="metric">
         <strong>2.5x</strong>
-        <span class="metric-label">Workflow speedup</span>
-      </div>
-      <div class="metric">
-        <strong>99.9%</strong>
-        <span class="metric-label">Reliability target</span>
+        <span>Workflow execution speedup in orchestration-focused project work</span>
       </div>
       <div class="metric">
         <strong>1M+</strong>
-        <span class="metric-label">Events processed in analytics systems</span>
+        <span>Events analyzed and processed in analytics-heavy systems</span>
+      </div>
+      <div class="metric">
+        <strong>20+</strong>
+        <span>Downstream systems relying on shared engineering outputs</span>
       </div>
     </div>
 
-    <section class="block" id="experience">
+    <section id="experience">
       <div class="section-head">
         <h2>Experience</h2>
-        <p>Experience building production systems across backend services, platform workflows, cloud infrastructure, and analytics pipelines.</p>
+        <p>Hands-on software engineering across backend systems, cloud infrastructure, pipelines, deployment workflows, and operational reliability.</p>
       </div>
+
       <div class="timeline">
-        <article class="card">
+        <article class="panel">
           <div>
-            <div class="eyebrow">Accenture</div>
-            <div class="eyebrow">Oct 2022 - Aug 2024</div>
+            <div class="meta">Accenture</div>
+            <div class="meta">Oct 2022 - Aug 2024</div>
           </div>
           <div>
-            <h3 class="role">Software Development Engineer, Cloud and Data Platform</h3>
+            <h3>Software Development Engineer, Cloud and Data Platform</h3>
             <ul>
-              <li>Built and hardened event-driven compliance infrastructure used by more than 20 downstream systems.</li>
-              <li>Worked across backend integrations, PySpark processing on EMR, and data-intensive production workflows.</li>
-              <li>Improved deployment safety and rollback behavior through CI/CD standards and operational guardrails.</li>
-              <li>Strengthened observability with CloudWatch, structured logging, and faster production issue detection.</li>
+              <li>Built and improved event-driven compliance systems used by more than 20 downstream consumers.</li>
+              <li>Worked across backend integrations, EMR and PySpark pipelines, and production cloud workflows handling high-volume data.</li>
+              <li>Improved deployment safety and rollback behavior through CI/CD standards and better operational guardrails.</li>
+              <li>Strengthened observability with CloudWatch, structured logging, and faster issue detection in production.</li>
             </ul>
           </div>
         </article>
-        <article class="card">
+
+        <article class="panel">
           <div>
-            <div class="eyebrow">Tutort Academy</div>
-            <div class="eyebrow">Jan 2022 - Jun 2022</div>
+            <div class="meta">Tutort Academy</div>
+            <div class="meta">Jan 2022 - Jun 2022</div>
           </div>
           <div>
-            <h3 class="role">Data Platform Intern</h3>
+            <h3>Data Platform Intern</h3>
             <ul>
-              <li>Built a centralized analytics layer over 1M+ user events for product and growth reporting.</li>
+              <li>Built analytics layers over more than 1M events for product and growth reporting.</li>
               <li>Automated internal reporting workflows with Python and dashboards for near real-time visibility.</li>
             </ul>
           </div>
         </article>
-        <article class="card">
+
+        <article class="panel">
           <div>
-            <div class="eyebrow">Tech Citi Software</div>
-            <div class="eyebrow">Oct 2020 - Dec 2020</div>
+            <div class="meta">Tech Citi Software</div>
+            <div class="meta">Oct 2020 - Dec 2020</div>
           </div>
           <div>
-            <h3 class="role">Software Engineering Intern</h3>
+            <h3>Software Engineering Intern</h3>
             <ul>
               <li>Wrote Python, Pandas, and SQL processing code used in retail forecasting workflows.</li>
               <li>Resolved data consistency and integration issues across API and database systems.</li>
@@ -639,17 +661,18 @@
       </div>
     </section>
 
-    <section class="block" id="projects">
+    <section id="projects">
       <div class="section-head">
         <h2>Projects</h2>
-        <p>Projects that show backend implementation, cloud infrastructure, and systems thinking rather than only model work.</p>
+        <p>Selected work that shows backend implementation, cloud architecture, system integration, and software engineering judgment.</p>
       </div>
+
       <div class="projects">
-        <article class="card project-wide">
+        <article class="panel wide">
           <div class="project-top">
             <div>
               <h3>Crisis Pulse</h3>
-              <p>Event-driven backend for incident ingestion, classification, severity scoring, and geo-filtered alert delivery.</p>
+              <p>Event-driven backend for ingesting incidents, classifying severity, storing results, and delivering geo-filtered alerts.</p>
             </div>
             <div class="project-links">
               <a href="https://github.com/Girik2920/crisis-pulse" target="_blank" rel="noreferrer">GitHub</a>
@@ -657,7 +680,7 @@
           </div>
           <ul>
             <li>Built on Kinesis, Lambda, DynamoDB, EventBridge, SNS, API Gateway, and Terraform.</li>
-            <li>Exposes public REST reads and async ingest paths for incident workflows.</li>
+            <li>Includes async ingest paths, public REST reads, and infrastructure defined as code.</li>
             <li>Designed around replayability, dead-letter handling, and low-latency serverless processing.</li>
           </ul>
           <div class="stack">
@@ -670,14 +693,13 @@
           </div>
         </article>
 
-        <article class="card">
+        <article class="panel">
           <div class="project-top">
             <div>
               <h3>ADPA</h3>
-              <p>Workflow-oriented backend project for translating user intent into orchestrated cloud execution.</p>
+              <p>Workflow-oriented backend project for turning user intent into orchestrated cloud execution.</p>
             </div>
             <div class="project-links">
-              <a href="http://adpa-frontend-083308938449-production.s3-website.us-east-2.amazonaws.com/monitor" target="_blank" rel="noreferrer">Live</a>
               <a href="https://github.com/Girik2920/ADPA" target="_blank" rel="noreferrer">GitHub</a>
             </div>
           </div>
@@ -693,11 +715,11 @@
           </div>
         </article>
 
-        <article class="card">
+        <article class="panel">
           <div class="project-top">
             <div>
               <h3>NYC Taxi Data Stack</h3>
-              <p>Engineering-focused data platform spanning ingestion, warehousing, transformation, and reporting.</p>
+              <p>End-to-end engineering pipeline spanning ingestion, warehousing, transformation, and analytics delivery.</p>
             </div>
             <div class="project-links">
               <a href="https://github.com/Girik2920/From-Street-to-SQL-End-to-End-NYC-Taxi-Data-Stack" target="_blank" rel="noreferrer">GitHub</a>
@@ -717,63 +739,74 @@
       </div>
     </section>
 
-    <section class="block" id="skills">
+    <section id="skills">
       <div class="section-head">
         <h2>Skills</h2>
-        <p>Built around software engineering fundamentals: backend development, reliability, cloud systems, and automation.</p>
+        <p>Backend-heavy technical strengths with a strong bias toward reliability, automation, and platform thinking.</p>
       </div>
+
       <div class="skills">
-        <article class="card">
-          <div class="skill-title">Languages</div>
-          <ul>
-            <li>Python</li>
-            <li>SQL</li>
-            <li>Bash</li>
-            <li>Java</li>
-          </ul>
+        <article class="panel">
+          <h3>Backend and APIs</h3>
+          <div class="quick-grid">
+            <span class="tag">Python</span>
+            <span class="tag">Java</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">Service Integration</span>
+            <span class="tag">Async Processing</span>
+          </div>
         </article>
-        <article class="card">
-          <div class="skill-title">Cloud and Backend</div>
-          <ul>
-            <li>AWS Lambda, API Gateway, Kinesis, EventBridge, SNS</li>
-            <li>DynamoDB, S3, EMR</li>
-            <li>REST APIs, async processing, service integration</li>
-          </ul>
+
+        <article class="panel">
+          <h3>Cloud and Infrastructure</h3>
+          <div class="quick-grid">
+            <span class="tag">AWS Lambda</span>
+            <span class="tag">API Gateway</span>
+            <span class="tag">Kinesis</span>
+            <span class="tag">DynamoDB</span>
+            <span class="tag">S3</span>
+            <span class="tag">Terraform</span>
+            <span class="tag">Docker</span>
+          </div>
         </article>
-        <article class="card">
-          <div class="skill-title">Data and Platform</div>
-          <ul>
-            <li>PySpark and Spark</li>
-            <li>Airflow and dbt</li>
-            <li>Terraform, Docker, CI/CD, observability</li>
-          </ul>
+
+        <article class="panel">
+          <h3>Data and Platform</h3>
+          <div class="quick-grid">
+            <span class="tag">PySpark</span>
+            <span class="tag">Spark</span>
+            <span class="tag">Airflow</span>
+            <span class="tag">dbt</span>
+            <span class="tag">CI/CD</span>
+            <span class="tag">CloudWatch</span>
+            <span class="tag">Observability</span>
+          </div>
         </article>
       </div>
     </section>
 
-    <section class="block">
+    <section>
       <div class="section-head">
         <h2>Education</h2>
-        <p>Technical foundation in data systems, engineering, and applied analytics.</p>
+        <p>Building a software engineering career on top of cloud, systems, and data platform experience.</p>
       </div>
+
       <div class="education">
-        <article class="card">
+        <article class="panel">
           <h3>University of Maryland, College Park</h3>
-          <p>MS in Data Science</p>
-          <p class="eyebrow">Expected May 2026</p>
+          <div class="meta">MS in Data Science | Expected May 2026</div>
         </article>
-        <article class="card">
+        <article class="panel">
           <h3>University of Mumbai</h3>
-          <p>BE in Electronics and Telecommunications</p>
-          <p class="eyebrow">Aug 2018 - Jun 2022</p>
+          <div class="meta">BE in Electronics and Telecommunications | 2018 - 2022</div>
         </article>
       </div>
     </section>
 
-    <section class="contact-panel" id="contact">
+    <section class="contact" id="contact">
       <div>
-        <span class="section-tag">Contact</span>
-        <h2>Looking for software engineering roles with strong backend and platform depth.</h2>
+        <div class="eyebrow">Open To Roles</div>
+        <h2>Looking for software engineering work with strong backend and platform depth.</h2>
         <p>
           If you are hiring for software engineering, backend, cloud, or platform roles, I would be glad to connect.
           I am based in Maryland and available for full-time work starting in May 2026.
@@ -799,7 +832,7 @@
       </div>
     </section>
 
-    <p class="footer-note">Built as a static HTML portfolio suitable for GitHub Pages.</p>
+    <div class="footer mono">Built as a static site for GitHub Pages.</div>
   </main>
 </body>
 </html>
