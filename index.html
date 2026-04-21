@@ -113,8 +113,8 @@
     .hero {
       padding: 4.75rem 0 2rem;
       display: grid;
-      grid-template-columns: 1.35fr 0.65fr;
-      gap: 1.25rem;
+      grid-template-columns: 1.42fr 0.58fr;
+      gap: 1rem;
       align-items: start;
     }
 
@@ -132,7 +132,7 @@
     .hero-primary {
       position: relative;
       overflow: hidden;
-      padding: 3rem 2.6rem 2.4rem;
+      padding: 2.75rem 2.45rem 2.25rem;
       background:
         radial-gradient(circle at top right, rgba(99, 168, 255, 0.12), transparent 28rem),
         linear-gradient(180deg, rgba(14, 19, 28, 0.985), rgba(8, 12, 18, 0.985));
@@ -177,7 +177,7 @@
     }
 
     .hero-headline {
-      margin: 0 0 0.95rem;
+      margin: 0 0 0.75rem;
       max-width: 18ch;
       color: var(--text);
       font-size: clamp(1.3rem, 2.8vw, 2rem);
@@ -187,7 +187,7 @@
 
     .lede {
       max-width: 48rem;
-      margin: 0 0 2rem;
+      margin: 0 0 1.35rem;
       color: #d2deef;
       font-size: 1.08rem;
       line-height: 1.7;
@@ -248,25 +248,25 @@
     }
 
     .callouts {
-      margin: 0 0 2rem;
-      max-width: 44rem;
+      margin: 0 0 1.35rem;
+      max-width: 42rem;
     }
 
     .actions {
-      margin-top: 0.1rem;
+      margin-top: 0;
     }
 
     .hero-side {
-      padding: 1rem;
+      padding: 0.85rem;
       display: grid;
-      gap: 0.95rem;
+      gap: 0.8rem;
       background:
         linear-gradient(180deg, rgba(18, 25, 38, 0.96), rgba(12, 18, 28, 0.9));
     }
 
     .mini-card {
       border-radius: 22px;
-      padding: 1.1rem;
+      padding: 0.95rem 1rem;
       border: 1px solid var(--line);
       background: var(--panel-soft);
     }
@@ -319,24 +319,28 @@
 
     .mini-card strong {
       display: block;
-      font-size: 1.7rem;
-      margin-bottom: 0.25rem;
+      font-size: 1.55rem;
+      margin-bottom: 0.18rem;
     }
 
     .mini-card p {
       margin: 0;
       color: var(--muted);
-      font-size: 0.96rem;
+      font-size: 0.92rem;
     }
 
     .metrics {
-      margin: 1rem 0 0;
+      margin: 1.2rem 0 0;
     }
 
     .metric {
       flex: 1 1 220px;
       padding: 1.2rem 1.25rem;
       background: linear-gradient(180deg, rgba(18, 25, 38, 0.94), rgba(12, 18, 28, 0.88));
+    }
+
+    .metrics .metric:last-child {
+      transform: translateY(0.85rem);
     }
 
     .metric strong {
@@ -547,6 +551,10 @@
 
       .contact-links {
         justify-content: flex-start;
+      }
+
+      .metrics .metric:last-child {
+        transform: none;
       }
     }
 
