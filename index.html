@@ -191,7 +191,7 @@
     .contact-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
+      gap: 0.9rem;
     }
 
     .tag,
@@ -204,7 +204,7 @@
     }
 
     .tag {
-      padding: 0.5rem 0.78rem;
+      padding: 0.58rem 0.9rem;
       color: var(--muted);
       border: 1px solid var(--line);
       background: rgba(255, 255, 255, 0.04);
@@ -214,13 +214,13 @@
       padding: 0.68rem 0.95rem;
       background: rgba(71, 214, 179, 0.12);
       color: var(--teal);
-      margin: 0 0 1.4rem;
+      margin: 0 0 1.6rem;
     }
 
     .button,
     .button-ghost {
       text-decoration: none;
-      padding: 0.92rem 1.18rem;
+      padding: 0.98rem 1.28rem;
       border-radius: 16px;
       font-weight: 500;
       transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
@@ -242,6 +242,15 @@
     .project-links a:hover,
     .contact-link:hover {
       transform: translateY(-2px);
+    }
+
+    .callouts {
+      margin: 0 0 1.9rem;
+      max-width: 44rem;
+    }
+
+    .actions {
+      margin-top: 0.2rem;
     }
 
     .hero-side {
@@ -517,6 +526,11 @@
       .metric,
       .contact {
         padding: 1.2rem;
+      }
+
+      .callouts,
+      .actions {
+        gap: 0.75rem;
       }
 
       h1 {
