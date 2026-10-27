@@ -4,933 +4,506 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Girik Tripathi | AI Software Engineer</title>
-  <meta
-    name="description"
-    content="Portfolio of Girik Tripathi, an AI software engineer building production LLM systems, RAG pipelines, vector search, and event-driven backends on AWS."
-  >
+  <meta name="description" content="Girik Tripathi, AI software engineer building LLM evaluation tooling, agentic services, and event-driven backends on AWS.">
+  <meta property="og:title" content="Girik Tripathi | AI Software Engineer">
+  <meta property="og:description" content="AI software engineer building LLM evaluation tooling, agentic services, and event-driven backends on AWS.">
+  <meta property="og:image" content="https://girik2920.github.io/girik-portfolio/profile-photo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0d1117;
-      --panel: rgba(12, 18, 28, 0.84);
-      --panel-strong: rgba(18, 25, 38, 0.96);
-      --panel-soft: rgba(255, 255, 255, 0.05);
+      --bg: #0b1017;
+      --panel: #111925;
+      --panel-2: #0e151f;
       --text: #ecf3ff;
       --muted: #9eb0c9;
-      --line: rgba(161, 182, 214, 0.16);
+      --dim: #6f819b;
+      --line: rgba(161, 182, 214, 0.15);
       --teal: #47d6b3;
       --blue: #63a8ff;
       --amber: #ffb86b;
-      --glow: 0 24px 80px rgba(0, 0, 0, 0.35);
-      --radius: 28px;
-      --max: 1180px;
+      --red: #ff7b7b;
+      --radius: 20px;
+      --max: 1120px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: "Space Grotesk", sans-serif;
+      font-family: "Space Grotesk", system-ui, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 10% 10%, rgba(71, 214, 179, 0.14), transparent 26rem),
-        radial-gradient(circle at 90% 15%, rgba(99, 168, 255, 0.16), transparent 28rem),
-        radial-gradient(circle at 50% 100%, rgba(255, 184, 107, 0.12), transparent 24rem),
-        linear-gradient(180deg, #090d14 0%, #0d1117 45%, #0b1017 100%);
+        radial-gradient(circle at 8% 0%, rgba(71, 214, 179, 0.11), transparent 30rem),
+        radial-gradient(circle at 95% 10%, rgba(99, 168, 255, 0.12), transparent 30rem),
+        var(--bg);
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-    }
-
-    .shell {
-      width: min(calc(100% - 2rem), var(--max));
-      margin: 0 auto;
-    }
-
-    .mono,
-    .eyebrow,
-    .nav a,
-    .tag,
-    .pill,
-    .mini-label,
-    .meta,
-    .stack span,
-    .footer {
-      font-family: "IBM Plex Mono", monospace;
-    }
+    a { color: inherit; }
+    .shell { width: min(calc(100% - 2rem), var(--max)); margin: 0 auto; }
+    .mono, .eyebrow, .nav a, .tag, .meta, .stack span, .label, .footer, .kpi span { font-family: "IBM Plex Mono", monospace; }
 
     .chrome {
-      position: sticky;
-      top: 0;
-      z-index: 30;
+      position: sticky; top: 0; z-index: 30;
       border-bottom: 1px solid var(--line);
-      background: rgba(9, 13, 20, 0.72);
-      backdrop-filter: blur(18px);
+      background: rgba(11, 16, 23, 0.78);
+      backdrop-filter: blur(16px);
     }
-
     .chrome-inner {
-      width: min(calc(100% - 2rem), var(--max));
-      margin: 0 auto;
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
+      width: min(calc(100% - 2rem), var(--max)); margin: 0 auto;
+      min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 1rem;
     }
-
-    .brand {
-      text-decoration: none;
-      font-size: 0.9rem;
-      letter-spacing: 0.04em;
-      color: var(--text);
-    }
-
-    .nav {
-      display: flex;
-      gap: 1.15rem;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .nav a {
-      text-decoration: none;
-      font-size: 0.82rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
+    .brand { text-decoration: none; font-weight: 700; letter-spacing: -0.01em; }
+    .nav { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
+    .nav a { text-decoration: none; font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+    .nav a:hover { color: var(--text); }
+    .nav .nav-cta { color: #071017; background: var(--teal); padding: 0.4rem 0.8rem; border-radius: 10px; }
+    .nav .nav-cta:hover { color: #071017; }
 
     .hero {
-      padding: 4.75rem 0 2rem;
-      display: grid;
-      grid-template-columns: 1.42fr 0.58fr;
-      gap: 1rem;
-      align-items: start;
+      padding: 3.5rem 0 1.5rem;
+      display: grid; grid-template-columns: 1fr 240px; gap: 2.5rem; align-items: center;
     }
-
-    .panel,
-    .hero-primary,
-    .hero-side,
-    .metric,
-    .contact {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      box-shadow: var(--glow);
-      border-radius: var(--radius);
-    }
-
-    .hero-primary {
-      position: relative;
-      overflow: hidden;
-      padding: 2.75rem 2.45rem 2.25rem;
-      background:
-        radial-gradient(circle at top right, rgba(99, 168, 255, 0.12), transparent 28rem),
-        linear-gradient(180deg, rgba(14, 19, 28, 0.985), rgba(8, 12, 18, 0.985));
-    }
-
-    .hero-primary::after {
-      content: "";
-      position: absolute;
-      inset: auto -5rem -5rem auto;
-      width: 24rem;
-      height: 24rem;
-      border-radius: 999px;
-      background: radial-gradient(circle, rgba(71, 214, 179, 0.1), transparent 68%);
-      pointer-events: none;
-    }
-
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      color: #88a6c9;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      color: var(--teal); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em;
     }
+    .eyebrow::before { content: ""; width: 0.45rem; height: 0.45rem; border-radius: 999px; background: var(--teal); box-shadow: 0 0 10px var(--teal); }
+    h1 { margin: 0.8rem 0 0.6rem; font-size: clamp(2.6rem, 6vw, 4.4rem); line-height: 1; letter-spacing: -0.045em; }
+    .headline { margin: 0 0 1rem; font-size: clamp(1.15rem, 2.2vw, 1.5rem); color: #d2deef; line-height: 1.35; max-width: 38ch; }
+    .lede { margin: 0 0 1.4rem; color: var(--muted); max-width: 60ch; }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+    .button, .button-ghost {
+      text-decoration: none; padding: 0.75rem 1.1rem; border-radius: 12px; font-weight: 500; font-size: 0.95rem;
+      transition: transform 140ms ease, border-color 140ms ease;
+    }
+    .button { background: linear-gradient(135deg, var(--teal), #3ec8ff); color: #071017; }
+    .button-ghost { border: 1px solid var(--line); background: rgba(255,255,255,0.03); }
+    .button:hover, .button-ghost:hover { transform: translateY(-2px); }
+    .button-ghost:hover { border-color: rgba(161,182,214,0.4); }
 
-    .eyebrow::before {
-      content: "";
-      width: 0.42rem;
-      height: 0.42rem;
-      border-radius: 999px;
-      background: var(--amber);
-      box-shadow: 0 0 12px rgba(255, 184, 107, 0.65);
+    .portrait {
+      width: 240px; aspect-ratio: 4 / 5; border-radius: 24px; overflow: hidden;
+      border: 1px solid var(--line); background: var(--panel);
     }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 55% 40%; display: block; }
 
-    h1 {
-      margin: 1rem 0 1rem;
-      font-size: clamp(4.3rem, 10vw, 7.8rem);
-      line-height: 0.9;
-      letter-spacing: -0.06em;
-      max-width: 7ch;
-    }
+    .facts { display: flex; flex-wrap: wrap; gap: 0.5rem 1.2rem; margin: 0 0 1.4rem; padding: 0; list-style: none; color: var(--muted); font-size: 0.92rem; }
+    .facts li + li { margin-top: 0; }
+    .facts strong { color: var(--text); font-weight: 500; }
 
-    .hero-headline {
-      margin: 0 0 0.75rem;
-      max-width: 18ch;
-      color: var(--text);
-      font-size: clamp(1.3rem, 2.8vw, 2rem);
-      line-height: 1.12;
-      letter-spacing: -0.04em;
-    }
-
-    .lede {
-      max-width: 48rem;
-      margin: 0 0 1.35rem;
-      color: #d2deef;
-      font-size: 1.08rem;
-      line-height: 1.7;
-    }
-
-    .callouts,
-    .actions,
-    .metrics,
-    .stack,
-    .quick-grid,
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-    }
-
-    .tag,
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      border-radius: 999px;
-      font-size: 0.76rem;
-      letter-spacing: 0.05em;
-    }
-
-    .tag {
-      padding: 0.58rem 0.9rem;
-      color: var(--muted);
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    .button,
-    .button-ghost {
-      text-decoration: none;
-      padding: 0.98rem 1.28rem;
-      border-radius: 16px;
-      font-weight: 500;
-      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
-    }
-
-    .button {
-      background: linear-gradient(135deg, var(--teal), #3ec8ff);
-      color: #071017;
-    }
-
-    .button-ghost {
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--text);
-    }
-
-    .button:hover,
-    .button-ghost:hover,
-    .project-links a:hover,
-    .contact-link:hover {
-      transform: translateY(-2px);
-    }
-
-    .callouts {
-      margin: 0 0 1.35rem;
-      max-width: 42rem;
-    }
-
-    .actions {
-      margin-top: 0;
-    }
-
-    .hero-side {
-      padding: 0.85rem;
-      display: grid;
-      gap: 0.8rem;
-      background:
-        linear-gradient(180deg, rgba(18, 25, 38, 0.96), rgba(12, 18, 28, 0.9));
-    }
-
-    .mini-card {
-      border-radius: 22px;
-      padding: 0.95rem 1rem;
-      border: 1px solid var(--line);
-      background: var(--panel-soft);
-    }
-
-    .portrait-card {
-      overflow: hidden;
-      padding: 0;
-      background:
-        linear-gradient(180deg, rgba(19, 27, 40, 0.96), rgba(12, 18, 28, 0.94));
-    }
-
-    .portrait-frame {
-      position: relative;
-      aspect-ratio: 4 / 5;
-      overflow: hidden;
-      border-radius: 22px;
-    }
-
-    .portrait-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 55% 42%;
-      filter: saturate(1.02) contrast(1.02);
-      transform: scale(1.04);
-    }
-
-    .portrait-frame::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, rgba(7, 11, 17, 0.08), rgba(7, 11, 17, 0.34) 72%, rgba(7, 11, 17, 0.62)),
-        radial-gradient(circle at top left, rgba(99, 168, 255, 0.14), transparent 36%);
-      pointer-events: none;
-    }
-
-    .portrait-copy {
-      padding: 1rem 1.05rem 1.1rem;
-    }
-
-    .mini-label {
-      display: inline-block;
-      margin-bottom: 0.6rem;
-      color: var(--muted);
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-    }
-
-    .mini-card strong {
-      display: block;
-      font-size: 1.55rem;
-      margin-bottom: 0.18rem;
-    }
-
-    .mini-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .metrics {
-      margin: 1.2rem 0 0;
-    }
-
-    .metric {
-      flex: 1 1 220px;
-      padding: 1.2rem 1.25rem;
-      background: linear-gradient(180deg, rgba(18, 25, 38, 0.94), rgba(12, 18, 28, 0.88));
-    }
-
-    .metrics .metric:last-child {
-      transform: translateY(0.85rem);
-    }
-
-    .metric strong {
-      display: block;
-      font-size: 2.1rem;
-      margin-bottom: 0.15rem;
-    }
-
-    .metric span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    section {
-      padding: 1.45rem 0 0.4rem;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 1rem;
-      margin: 1.8rem 0 1rem;
-    }
-
-    .section-head h2 {
-      margin: 0;
-      font-size: clamp(1.9rem, 4vw, 2.8rem);
-      letter-spacing: -0.05em;
-    }
-
-    .section-head p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 40rem;
-    }
-
-    .timeline,
-    .projects,
-    .skills,
-    .education {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .timeline .panel {
-      padding: 1.4rem 1.45rem;
-      display: grid;
-      grid-template-columns: 12rem 1fr;
-      gap: 1.4rem;
-    }
-
-    .meta {
-      color: var(--muted);
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    h3 {
-      margin: 0 0 0.7rem;
-      font-size: 1.2rem;
-    }
-
-    ul {
-      margin: 0;
-      padding-left: 1rem;
-    }
-
-    li + li {
-      margin-top: 0.45rem;
-    }
-
-    .projects {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .wide {
-      grid-column: 1 / -1;
-    }
+    section { padding: 2.2rem 0 0.5rem; }
+    .section-head { margin: 0 0 1.2rem; }
+    .section-head h2 { margin: 0 0 0.3rem; font-size: clamp(1.7rem, 3.4vw, 2.3rem); letter-spacing: -0.04em; }
+    .section-head p { margin: 0; color: var(--muted); max-width: 60ch; }
 
     .panel {
-      padding: 1.5rem;
-      background: linear-gradient(180deg, rgba(18, 25, 38, 0.94), rgba(12, 18, 28, 0.88));
+      background: linear-gradient(180deg, var(--panel), var(--panel-2));
+      border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem;
     }
+    h3 { margin: 0 0 0.4rem; font-size: 1.25rem; letter-spacing: -0.01em; }
+    ul { margin: 0; padding-left: 1.1rem; }
+    li + li { margin-top: 0.4rem; }
+    .muted { color: var(--muted); }
 
-    .project-top {
-      display: flex;
-      align-items: start;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 0.8rem;
+    .tag {
+      display: inline-flex; align-items: center; padding: 0.35rem 0.7rem; border-radius: 999px;
+      font-size: 0.72rem; color: var(--muted); border: 1px solid var(--line); background: rgba(255,255,255,0.03);
     }
+    .stack { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1rem; }
+    .stack span { padding: 0.32rem 0.65rem; border-radius: 999px; background: rgba(99,168,255,0.1); color: #cfe3ff; font-size: 0.72rem; }
 
-    .project-top p {
-      margin: 0;
-      color: var(--muted);
+    .links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .links a {
+      text-decoration: none; font-size: 0.8rem; border: 1px solid var(--line); border-radius: 999px; padding: 0.35rem 0.75rem;
+      background: rgba(255,255,255,0.03);
     }
+    .links a:hover { border-color: rgba(161,182,214,0.45); }
 
-    .project-links {
-      display: flex;
-      gap: 0.6rem;
-      flex-wrap: wrap;
+    .case { display: grid; gap: 1.4rem; margin-bottom: 1rem; }
+    .case-top { display: flex; justify-content: space-between; align-items: start; gap: 1rem; flex-wrap: wrap; }
+    .case-top .label { color: var(--amber); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; }
+    .case-body { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 1.6rem; }
+    .case-body h4 {
+      margin: 0 0 0.35rem; font-family: "IBM Plex Mono", monospace; font-weight: 500;
+      font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--dim);
     }
+    .case-body p { margin: 0 0 1rem; color: #d2deef; }
+    .case-body ul { color: #d2deef; }
 
-    .project-links a {
-      text-decoration: none;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.04);
-      padding: 0.45rem 0.75rem;
-      font-size: 0.76rem;
-      transition: transform 160ms ease, border-color 160ms ease;
-    }
+    .kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+    .kpi { border: 1px solid var(--line); border-radius: 14px; padding: 0.8rem 0.9rem; background: rgba(255,255,255,0.02); }
+    .kpi strong { display: block; font-size: 1.5rem; letter-spacing: -0.03em; }
+    .kpi span { font-size: 0.72rem; color: var(--muted); }
 
-    .stack {
-      margin-top: 1rem;
-    }
+    .rubric { display: grid; gap: 0.55rem; margin-top: 0.3rem; }
+    .bar { display: grid; grid-template-columns: 9.5rem 1fr 2.6rem; align-items: center; gap: 0.6rem; font-size: 0.84rem; }
+    .bar .track { height: 8px; border-radius: 999px; background: rgba(255,255,255,0.06); overflow: hidden; }
+    .bar .fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--teal), var(--blue)); }
+    .bar .pct { font-family: "IBM Plex Mono", monospace; font-size: 0.76rem; color: var(--muted); text-align: right; }
+    .bands { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.9rem; }
+    .band { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; padding: 0.25rem 0.55rem; border-radius: 8px; }
+    .band.pass { background: rgba(71,214,179,0.14); color: var(--teal); }
+    .band.warn { background: rgba(255,184,107,0.14); color: var(--amber); }
+    .band.fail { background: rgba(255,123,123,0.14); color: var(--red); }
 
-    .stack span {
-      padding: 0.45rem 0.72rem;
-      border-radius: 999px;
-      background: rgba(99, 168, 255, 0.1);
-      color: #cfe3ff;
-      font-size: 0.75rem;
-    }
+    .diagram { width: 100%; height: auto; display: block; }
+    .diagram .node rect { fill: rgba(99,168,255,0.08); stroke: rgba(161,182,214,0.35); }
+    .diagram .node.accent rect { fill: rgba(71,214,179,0.1); stroke: rgba(71,214,179,0.55); }
+    .diagram .node.warm rect { fill: rgba(255,184,107,0.1); stroke: rgba(255,184,107,0.5); }
+    .diagram text { fill: var(--text); font-family: "IBM Plex Mono", monospace; font-size: 12px; }
+    .diagram .sub { fill: var(--muted); font-size: 10px; }
+    .diagram .edge { stroke: rgba(161,182,214,0.55); stroke-width: 1.4; fill: none; marker-end: url(#arrow); }
+    .diagram-wrap { border: 1px solid var(--line); border-radius: 14px; padding: 0.8rem; background: rgba(0,0,0,0.15); overflow-x: auto; }
+    .diagram-wrap svg { min-width: 620px; }
 
-    .quick-grid {
-      margin-top: 0.9rem;
-    }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .grid-3 .panel { display: flex; flex-direction: column; }
+    .grid-3 .panel p { margin: 0 0 0.8rem; color: var(--muted); font-size: 0.95rem; flex: 1; }
 
-    .quick-grid .tag {
-      background: rgba(255, 255, 255, 0.03);
-    }
+    .timeline { display: grid; gap: 0.8rem; }
+    .role { display: grid; grid-template-columns: 11rem 1fr; gap: 1.2rem; }
+    .meta { color: var(--muted); font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.08em; }
+    .role h3 { font-size: 1.1rem; }
+    .role ul { color: #d2deef; font-size: 0.97rem; }
 
-    .skills {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
+    .skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .skills .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; }
+    .skills h3 { font-size: 1.05rem; }
+
+    .edu { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .edu h3 { font-size: 1.05rem; }
 
     .contact {
-      margin: 2rem 0 4rem;
-      padding: 1.7rem;
-      display: grid;
-      grid-template-columns: 1.05fr 1fr;
-      gap: 1.5rem;
-      background:
-        linear-gradient(135deg, rgba(99, 168, 255, 0.08), rgba(71, 214, 179, 0.06)),
-        linear-gradient(180deg, rgba(18, 25, 38, 0.96), rgba(10, 15, 24, 0.94));
+      margin: 2.5rem 0 2rem; padding: 2rem;
+      display: grid; grid-template-columns: 1.1fr 1fr; gap: 1.5rem; align-items: center;
+      background: linear-gradient(135deg, rgba(99,168,255,0.08), rgba(71,214,179,0.06)), var(--panel);
     }
-
-    .contact h2 {
-      margin: 0 0 0.7rem;
-      font-size: clamp(1.9rem, 4vw, 3rem);
-      letter-spacing: -0.05em;
-    }
-
-    .contact p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 35rem;
-    }
-
-    .contact-links {
-      justify-content: flex-end;
-      align-content: start;
-    }
-
+    .contact h2 { margin: 0.5rem 0 0.5rem; font-size: clamp(1.6rem, 3.2vw, 2.3rem); letter-spacing: -0.04em; }
+    .contact p { margin: 0; color: var(--muted); }
+    .contact-links { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
     .contact-link {
-      min-width: 13rem;
-      text-decoration: none;
-      border-radius: 20px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.04);
-      padding: 0.95rem 1rem;
-      transition: transform 160ms ease;
+      text-decoration: none; border: 1px solid var(--line); border-radius: 14px; padding: 0.8rem 0.9rem;
+      background: rgba(255,255,255,0.03); transition: transform 140ms ease;
     }
+    .contact-link:hover { transform: translateY(-2px); }
+    .contact-link strong { display: block; font-size: 0.9rem; }
+    .contact-link span { color: var(--muted); font-size: 0.85rem; word-break: break-word; }
 
-    .contact-link strong {
-      display: block;
-      margin-bottom: 0.18rem;
+    .footer { color: var(--dim); font-size: 0.74rem; padding: 0 0 2.5rem; text-transform: uppercase; letter-spacing: 0.08em; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; gap: 1.5rem; padding-top: 2.5rem; }
+      .portrait { width: 140px; order: -1; border-radius: 18px; }
+      .case-body, .contact, .edu { grid-template-columns: 1fr; }
+      .grid-3, .skills { grid-template-columns: 1fr; }
+      .role { grid-template-columns: 1fr; gap: 0.4rem; }
     }
-
-    .contact-link span {
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
-    .footer {
-      color: var(--muted);
-      font-size: 0.78rem;
-      padding-bottom: 3rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    @media (max-width: 920px) {
-      .hero,
-      .contact,
-      .timeline .panel {
-        grid-template-columns: 1fr;
-      }
-
-      .projects,
-      .skills {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-links {
-        justify-content: flex-start;
-      }
-
-      .metrics .metric:last-child {
-        transform: none;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .chrome-inner {
-        padding: 0.8rem 0;
-        align-items: start;
-      }
-
-      .hero {
-        padding-top: 3.1rem;
-      }
-
-      .hero-primary,
-      .hero-side,
-      .panel,
-      .metric,
-      .contact {
-        padding: 1.2rem;
-      }
-
-      .callouts,
-      .actions {
-        gap: 0.75rem;
-      }
-
-      h1 {
-        font-size: clamp(3.2rem, 16vw, 5rem);
-      }
+    @media (max-width: 560px) {
+      .nav a:not(.nav-cta) { display: none; }
+      .panel, .contact { padding: 1.15rem; }
+      .kpi strong { font-size: 1.2rem; }
+      .bar { grid-template-columns: 7.5rem 1fr 2.3rem; font-size: 0.78rem; }
+      .contact-links { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <header class="chrome">
     <div class="chrome-inner">
-      <a class="brand mono" href="#top">Girik Tripathi</a>
+      <a class="brand" href="#top">Girik Tripathi</a>
       <nav class="nav" aria-label="Primary">
-        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
+        <a class="nav-cta" href="resume.pdf" target="_blank" rel="noreferrer">Resume</a>
       </nav>
     </div>
   </header>
 
   <main class="shell" id="top">
     <section class="hero">
-      <div class="hero-primary">
-        <span class="eyebrow">AI . Backend . Cloud</span>
-        <h1>Girik<br>Tripathi</h1>
-        <p class="hero-headline">Building production AI systems that are fast, measurable, and reliable at scale.</p>
+      <div>
+        <span class="eyebrow">AI Software Engineer</span>
+        <h1>Girik Tripathi</h1>
+        <p class="headline">I build AI systems that can be measured, and the backends that keep them reliable in production.</p>
         <p class="lede">
-          AI Software Engineer with 4+ years designing scalable backend architectures, high-throughput data pipelines,
-          and production-grade AI/LLM systems on AWS. I build event-driven microservices, RAG pipelines, and vector
-          search infrastructure with sub-100ms P99 latencies. MS Data Science @ UMD, based in Tempe, AZ and open to relocate.
+          4+ years building event-driven microservices, data pipelines, and LLM-powered services on AWS. Lately I've focused
+          on the part most AI demos skip: evaluating agents before they reach customers. MS in Data Science from the
+          University of Maryland.
         </p>
-        <div class="callouts">
-          <span class="tag">Python</span>
-          <span class="tag">Go</span>
-          <span class="tag">LangChain</span>
-          <span class="tag">RAG</span>
-          <span class="tag">Vector Search</span>
-          <span class="tag">AWS</span>
-          <span class="tag">Kafka</span>
-          <span class="tag">LLM Evaluation</span>
-        </div>
+        <ul class="facts">
+          <li><strong>Tempe, AZ</strong> · open to relocate</li>
+          <li><strong>Python · Go · Java</strong></li>
+          <li><strong>LLM evals · RAG · AWS</strong></li>
+        </ul>
         <div class="actions">
-          <a class="button" href="https://github.com/Girik2920" target="_blank" rel="noreferrer">View GitHub</a>
+          <a class="button" href="#projects">See my work</a>
+          <a class="button-ghost" href="resume.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
+          <a class="button-ghost" href="https://github.com/Girik2920" target="_blank" rel="noreferrer">GitHub</a>
           <a class="button-ghost" href="https://www.linkedin.com/in/girik-tripathi29/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="button-ghost" href="mailto:giriktripathi2@gmail.com">Email</a>
         </div>
       </div>
-
-      <aside class="hero-side" aria-label="Highlights">
-        <div class="mini-card portrait-card">
-          <div class="portrait-frame">
-            <img src="profile-photo.jpg" alt="Portrait of Girik Tripathi">
-          </div>
-          <div class="portrait-copy">
-            <span class="mini-label">Profile</span>
-            <p>AI software engineer focused on agentic services, RAG and vector search, and the backend infrastructure that runs them.</p>
-          </div>
-        </div>
-        <div class="mini-card">
-          <span class="mini-label">Focus</span>
-          <strong>AI + Backend</strong>
-          <p>Comfortable across LLM services, vector databases, event-driven pipelines, and evaluation.</p>
-        </div>
-        <div class="mini-card">
-          <span class="mini-label">Latency</span>
-          <strong>&lt;65ms P99</strong>
-          <p>Hybrid vector search serving natural-language queries at 12,000+ requests/sec.</p>
-        </div>
-        <div class="mini-card">
-          <span class="mini-label">Scale</span>
-          <strong>8 TB+/month</strong>
-          <p>Kafka and PySpark streaming pipelines with automated schema validation.</p>
-        </div>
-      </aside>
-    </section>
-
-    <div class="metrics" aria-label="Impact metrics">
-      <div class="metric">
-        <strong>38%</strong>
-        <span>Faster menu ingestion via an agentic routing service</span>
-      </div>
-      <div class="metric">
-        <strong>24%</strong>
-        <span>Fewer support hallucinations through automated LLM evaluation</span>
-      </div>
-      <div class="metric">
-        <strong>2.5x</strong>
-        <span>API throughput under peak concurrency</span>
-      </div>
-      <div class="metric">
-        <strong>45%</strong>
-        <span>Faster incident detection with CI/CD and observability pipelines</span>
-      </div>
-    </div>
-
-    <section id="experience">
-      <div class="section-head">
-        <h2>Experience</h2>
-        <p>Production AI and backend engineering across agentic services, vector search, streaming pipelines, and cloud infrastructure.</p>
-      </div>
-
-      <div class="timeline">
-        <article class="panel">
-          <div>
-            <div class="meta">DoorDash</div>
-            <div class="meta">Jan 2026 - Present</div>
-          </div>
-          <div>
-            <h3>AI Software Engineer</h3>
-            <ul>
-              <li>Architected an asynchronous agentic routing service using Python, LangChain, and AWS ECS, automating merchant catalog classification and reducing menu ingestion delays by 38% across 50,000+ active partner profiles.</li>
-              <li>Built a hybrid vector search pipeline with pgvector, Qdrant, and Redis caching for natural-language inventory search, achieving sub-65ms P99 latency at peaks above 12,000 requests/sec.</li>
-              <li>Established an automated LLM evaluation framework using pytest, LangSmith, and Ragas, setting regression guardrails across fine-tuned inference pipelines and cutting support hallucination rates by 24%.</li>
-              <li>Optimized real-time dispatch telemetry microservices on AWS Lambda, SQS, and DynamoDB, integrating low-latency inference endpoints to improve delivery ETA accuracy by 15%.</li>
-              <li>Streamlined CI/CD and observability with AWS CodePipeline, Docker, and CloudWatch, enabling zero-downtime rollbacks and reducing incident detection times by 45%.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="panel">
-          <div>
-            <div class="meta">Accenture</div>
-            <div class="meta">Oct 2022 - Aug 2024</div>
-          </div>
-          <div>
-            <h3>Software Development Engineer</h3>
-            <ul>
-              <li>Engineered high-throughput event-driven microservices using Java, Go, gRPC, and AWS Lambda, replacing legacy monolith endpoints for a Fortune 500 client and boosting API throughput by 2.5x under peak concurrency.</li>
-              <li>Built asynchronous streaming pipelines with Apache Kafka and PySpark on AWS EMR, processing 8 TB+/month with automated schema validation and cutting nightly ETL windows by 40%.</li>
-              <li>Led document processing and NLP extraction workflows using PyTorch, Hugging Face Transformers, and LlamaIndex for unstructured vendor invoices, reducing manual reconciliation by 60%.</li>
-              <li>Delivered unit and integration test suites with pytest, Postman, and Locust, reaching 88% coverage and surfacing capacity bottlenecks before release.</li>
-              <li>Automated CI/CD and infrastructure as code with Jenkins, Terraform, and CloudWatch, cutting environment setup from 3 days to under 45 minutes.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="panel">
-          <div>
-            <div class="meta">Aspire Technolab</div>
-            <div class="meta">Jan 2021 - Sep 2022</div>
-          </div>
-          <div>
-            <h3>Software Engineer</h3>
-            <ul>
-              <li>Developed RESTful microservices and backend API modules using Python, PostgreSQL, and MySQL on Azure App Services, improving API response times by 32% through query optimization.</li>
-              <li>Designed normalized relational schemas for 100,000+ transactional records with foreign key constraints and automated validation, reducing data consistency errors by 45%.</li>
-              <li>Automated ingestion of multi-source CSV and JSON payloads with Python, SQL, and shell scripts, cutting manual processing time by 50%.</li>
-              <li>Expanded unit and integration test coverage to 82% with unittest and Postman, and standardized CI/CD with Docker, Git, and Azure DevOps.</li>
-            </ul>
-          </div>
-        </article>
+      <div class="portrait">
+        <img src="profile-photo.jpg" alt="Portrait of Girik Tripathi" width="480" height="600">
       </div>
     </section>
 
     <section id="projects">
       <div class="section-head">
-        <h2>Projects</h2>
-        <p>Selected work across AI systems, event-driven backends, and data infrastructure.</p>
+        <h2>Featured work</h2>
+        <p>Two projects, with the reasoning behind them rather than just the stack.</p>
       </div>
 
-      <div class="projects">
-        <article class="panel wide">
-          <div class="project-top">
-            <div>
-              <h3>Crisis Pulse</h3>
-              <p>Real-time AI threat and event intelligence platform.</p>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Girik2920/crisis-pulse" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
+      <article class="panel case">
+        <div class="case-top">
+          <div>
+            <span class="label">AI agent evaluation</span>
+            <h3>ResolveAI</h3>
+            <p class="muted" style="margin:0">Stress-tests chat and voice support agents before they reach customers.</p>
           </div>
-          <ul>
-            <li>Event-streaming AI backend on AWS Kinesis, Lambda, DynamoDB, and Qdrant ingesting 10,000+ events/sec.</li>
-            <li>RAG synthesis pipeline using FastAPI, LangChain, and pgvector with hybrid search (BM25 + dense vectors) generating sub-100ms geo-tagged threat summaries.</li>
-            <li>Agentic alerting and evaluation guardrails with EventBridge, SNS, Pydantic structured outputs, pytest, and Ragas for fault-tolerant, zero-message-loss incident delivery.</li>
-          </ul>
-          <div class="stack">
-            <span>Kinesis</span>
-            <span>Lambda</span>
-            <span>Qdrant</span>
-            <span>pgvector</span>
-            <span>LangChain</span>
-            <span>FastAPI</span>
-            <span>Ragas</span>
+          <div class="links">
+            <a href="https://github.com/Girik2920/resolveai-agent-evals" target="_blank" rel="noreferrer">Source on GitHub</a>
+          </div>
+        </div>
+
+        <div class="kpis">
+          <div class="kpi"><strong>60+</strong><span>multi-turn scenarios</span></div>
+          <div class="kpi"><strong>6</strong><span>industries covered</span></div>
+          <div class="kpi"><strong>6</strong><span>weighted eval criteria</span></div>
+        </div>
+
+        <div class="case-body">
+          <div>
+            <h4>Problem</h4>
+            <p>Support agents rarely fail on the happy path. They fail when they invent policy, call tools in the wrong order, leak PII, miss a safety escalation, or claim success after an API error. Those failures need to be repeatable tests, not anecdotes.</p>
+            <h4>Approach</h4>
+            <ul>
+              <li>Scenario library with messy multi-turn transcripts, hidden evaluator-only ground truth, expected tool-call sequences, and escalation triggers for fraud, PII, safety, and repeated human requests.</li>
+              <li>Suites for prompt injection, API failure handling, RAG faithfulness, refund abuse, and human handoff.</li>
+              <li>Prompt v1 vs v2 comparison with regression warnings and side-by-side transcripts.</li>
+              <li>Voice Lab that scores interruption handling, speech uncertainty, escalation timing, and call-summary accuracy.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Scoring rubric</h4>
+            <div class="rubric" role="img" aria-label="Weighted rubric: policy compliance 20%, tool-call correctness 20%, factual correctness 20%, escalation 15%, safety 15%, customer experience 10%">
+              <div class="bar"><span>Policy compliance</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="pct">20%</span></div>
+              <div class="bar"><span>Tool-call correctness</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="pct">20%</span></div>
+              <div class="bar"><span>Factual correctness</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="pct">20%</span></div>
+              <div class="bar"><span>Escalation</span><div class="track"><div class="fill" style="width:75%"></div></div><span class="pct">15%</span></div>
+              <div class="bar"><span>Safety</span><div class="track"><div class="fill" style="width:75%"></div></div><span class="pct">15%</span></div>
+              <div class="bar"><span>Customer experience</span><div class="track"><div class="fill" style="width:50%"></div></div><span class="pct">10%</span></div>
+            </div>
+            <div class="bands">
+              <span class="band pass">85–100 pass</span>
+              <span class="band warn">70–84 warning</span>
+              <span class="band fail">&lt;70 fail</span>
+            </div>
+            <h4 style="margin-top:1.2rem">Key decision</h4>
+            <p>Every run ends in a deployment call (ready for pilot, needs guardrails, or not production ready) instead of a raw score, because that's the decision a team actually has to make. Without an API key the engine falls back to a deterministic demo mode, so evaluations stay reproducible.</p>
+          </div>
+        </div>
+        <div class="stack">
+          <span>Next.js</span><span>TypeScript</span><span>Vercel AI SDK</span><span>OpenAI</span><span>Zod</span><span>Supabase / Postgres</span><span>Recharts</span>
+        </div>
+      </article>
+
+      <article class="panel case">
+        <div class="case-top">
+          <div>
+            <span class="label">Event-driven backend</span>
+            <h3>Crisis Pulse</h3>
+            <p class="muted" style="margin:0">Real-time disaster intelligence and geo-alerting on AWS serverless.</p>
+          </div>
+          <div class="links">
+            <a href="https://github.com/Girik2920/crisis-pulse" target="_blank" rel="noreferrer">Source on GitHub</a>
+          </div>
+        </div>
+
+        <div class="diagram-wrap">
+          <svg class="diagram" viewBox="0 0 900 230" role="img" aria-label="Crisis Pulse architecture: incident feeds into Kinesis; a classifier Lambda writes to DynamoDB and S3 and publishes high-severity events to EventBridge, then an alert Lambda sends to SNS. API Gateway and an API Lambda serve geo queries from DynamoDB.">
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="rgba(161,182,214,0.75)"/>
+              </marker>
+            </defs>
+            <g class="node"><rect x="10" y="60" width="120" height="50" rx="10"/><text x="70" y="82" text-anchor="middle">Feeds / HTTP</text><text class="sub" x="70" y="98" text-anchor="middle">incident signals</text></g>
+            <g class="node"><rect x="170" y="60" width="120" height="50" rx="10"/><text x="230" y="82" text-anchor="middle">Kinesis</text><text class="sub" x="230" y="98" text-anchor="middle">ingest stream</text></g>
+            <g class="node accent"><rect x="330" y="60" width="140" height="50" rx="10"/><text x="400" y="82" text-anchor="middle">Classifier λ</text><text class="sub" x="400" y="98" text-anchor="middle">type + severity</text></g>
+            <g class="node"><rect x="520" y="10" width="120" height="44" rx="10"/><text x="580" y="30" text-anchor="middle">DynamoDB</text><text class="sub" x="580" y="45" text-anchor="middle">hot reads</text></g>
+            <g class="node"><rect x="520" y="64" width="120" height="44" rx="10"/><text x="580" y="84" text-anchor="middle">S3</text><text class="sub" x="580" y="99" text-anchor="middle">archive</text></g>
+            <g class="node warm"><rect x="520" y="118" width="120" height="44" rx="10"/><text x="580" y="138" text-anchor="middle">EventBridge</text><text class="sub" x="580" y="153" text-anchor="middle">high / critical</text></g>
+            <g class="node accent"><rect x="680" y="118" width="100" height="44" rx="10"/><text x="730" y="138" text-anchor="middle">Alert λ</text><text class="sub" x="730" y="153" text-anchor="middle">fan-out</text></g>
+            <g class="node warm"><rect x="810" y="118" width="80" height="44" rx="10"/><text x="850" y="145" text-anchor="middle">SNS</text></g>
+            <g class="node"><rect x="680" y="10" width="100" height="44" rx="10"/><text x="730" y="30" text-anchor="middle">API λ</text><text class="sub" x="730" y="45" text-anchor="middle">geo queries</text></g>
+            <g class="node"><rect x="810" y="10" width="80" height="44" rx="10"/><text x="850" y="30" text-anchor="middle">API GW</text><text class="sub" x="850" y="45" text-anchor="middle">public</text></g>
+            <path class="edge" d="M130,85 H168"/>
+            <path class="edge" d="M290,85 H328"/>
+            <path class="edge" d="M470,78 C495,78 495,32 518,32"/>
+            <path class="edge" d="M470,86 H518"/>
+            <path class="edge" d="M470,94 C495,94 495,140 518,140"/>
+            <path class="edge" d="M640,140 H678"/>
+            <path class="edge" d="M780,140 H808"/>
+            <path class="edge" d="M678,32 H642"/>
+            <path class="edge" d="M808,32 H782"/>
+            <text class="sub" x="10" y="205">Terraform-managed · CloudWatch alarms on DLQ depth and Lambda error rate · deterministic event IDs for dedupe</text>
+          </svg>
+        </div>
+
+        <div class="case-body">
+          <div>
+            <h4>Problem</h4>
+            <p>Incident signals arrive in bursts from many sources. The system has to classify and store every event, avoid duplicates, and alert only on what matters, without anyone babysitting servers.</p>
+            <h4>Approach</h4>
+            <ul>
+              <li>Kinesis absorbs bursty ingest; a Python classifier Lambda assigns disaster type and a severity score.</li>
+              <li>Writes go to DynamoDB for low-latency geo queries and to S3 for archive and replay.</li>
+              <li>Only high and critical events go to EventBridge, then through an alert Lambda to SNS.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Key decisions</h4>
+            <ul>
+              <li><strong>Deterministic event IDs</strong> make retries idempotent, so at-least-once delivery doesn't create duplicate alerts.</li>
+              <li><strong>Dual write (DynamoDB + S3)</strong> separates hot reads from durable history.</li>
+              <li><strong>EventBridge between classify and alert</strong> keeps alerting decoupled, so new channels don't touch the classifier.</li>
+              <li><strong>Everything in Terraform</strong>, with alarms on DLQ depth and error rate from day one.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="stack">
+          <span>Kinesis</span><span>Lambda (Python 3.11)</span><span>DynamoDB</span><span>S3</span><span>EventBridge</span><span>SNS</span><span>API Gateway</span><span>CloudWatch</span><span>Terraform</span>
+        </div>
+      </article>
+
+      <div class="section-head" style="margin-top:2rem">
+        <h2 style="font-size:1.5rem">More projects</h2>
+      </div>
+      <div class="grid-3">
+        <article class="panel">
+          <h3>TerpHealth Copilot</h3>
+          <p>Hackathon MVP that helps UMD students choose where to get care, estimate costs under the student health plan, and find campus resources, with structured recommendations and escalation red flags.</p>
+          <div class="stack" style="margin-top:0"><span>React</span><span>Vite</span><span>Node</span><span>Vercel</span></div>
+          <div class="links" style="margin-top:0.9rem"><a href="https://github.com/Girik2920/terphealth-copilot" target="_blank" rel="noreferrer">GitHub</a></div>
+        </article>
+        <article class="panel">
+          <h3>ADPA</h3>
+          <p>Turns natural-language goals into ML workflow DAGs for training, evaluation, and deployment, with orchestration, retries, and failure handling.</p>
+          <div class="stack" style="margin-top:0"><span>Step Functions</span><span>SageMaker</span><span>Lambda</span><span>LLMs</span></div>
+          <div class="links" style="margin-top:0.9rem"><a href="https://github.com/Girik2920/ADPA" target="_blank" rel="noreferrer">GitHub</a></div>
+        </article>
+        <article class="panel">
+          <h3>NYC Taxi Data Stack</h3>
+          <p>End-to-end pipeline from ingestion to warehouse models and analytics: Airflow into BigQuery, dbt transformations, infrastructure as code.</p>
+          <div class="stack" style="margin-top:0"><span>Airflow</span><span>dbt</span><span>BigQuery</span><span>Terraform</span></div>
+          <div class="links" style="margin-top:0.9rem"><a href="https://github.com/Girik2920/From-Street-to-SQL-End-to-End-NYC-Taxi-Data-Stack" target="_blank" rel="noreferrer">GitHub</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-head">
+        <h2>Experience</h2>
+        <p>The highlights. Full detail is in the <a href="resume.pdf" target="_blank" rel="noreferrer">resume</a>.</p>
+      </div>
+      <div class="timeline">
+        <article class="panel role">
+          <div><div class="meta">DoorDash</div><div class="meta">Jan 2026 – Present</div></div>
+          <div>
+            <h3>AI Software Engineer</h3>
+            <ul>
+              <li>Agentic routing service (Python, LangChain, ECS) for merchant catalog classification, cutting menu ingestion delays by 38% across 50,000+ partner profiles.</li>
+              <li>LLM evaluation framework (pytest, LangSmith, Ragas) with regression guardrails, reducing support hallucination rates by 24%.</li>
+            </ul>
           </div>
         </article>
-
-        <article class="panel">
-          <div class="project-top">
-            <div>
-              <h3>ADPA</h3>
-              <p>Turns natural-language intent into orchestrated ML workflows in the cloud.</p>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Girik2920/ADPA" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
-          </div>
-          <ul>
-            <li>Converts user goals into workflow DAGs for training, evaluation, and deployment.</li>
-            <li>Highlights orchestration design, retries, and production reliability concerns.</li>
-          </ul>
-          <div class="stack">
-            <span>Step Functions</span>
-            <span>SageMaker</span>
-            <span>Lambda</span>
-            <span>LLMs</span>
+        <article class="panel role">
+          <div><div class="meta">Accenture</div><div class="meta">Oct 2022 – Aug 2024</div></div>
+          <div>
+            <h3>Software Development Engineer</h3>
+            <ul>
+              <li>Event-driven microservices (Java, Go, gRPC, Lambda) replacing legacy monolith endpoints, boosting API throughput 2.5x under peak load.</li>
+              <li>Kafka and PySpark pipelines on EMR processing 8 TB+/month, cutting nightly ETL windows by 40%.</li>
+            </ul>
           </div>
         </article>
-
-        <article class="panel">
-          <div class="project-top">
-            <div>
-              <h3>NYC Taxi Data Stack</h3>
-              <p>End-to-end pipeline spanning ingestion, warehousing, transformation, and analytics delivery.</p>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Girik2920/From-Street-to-SQL-End-to-End-NYC-Taxi-Data-Stack" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
-          </div>
-          <ul>
-            <li>Airflow to BigQuery pipeline with dbt transformations and infrastructure as code.</li>
-            <li>Shows end-to-end pipeline design and deployable cloud infrastructure patterns.</li>
-          </ul>
-          <div class="stack">
-            <span>Airflow</span>
-            <span>dbt</span>
-            <span>BigQuery</span>
-            <span>Terraform</span>
+        <article class="panel role">
+          <div><div class="meta">Aspire Technolab</div><div class="meta">Jan 2021 – Sep 2022</div></div>
+          <div>
+            <h3>Software Engineer</h3>
+            <ul>
+              <li>REST microservices on Python, PostgreSQL, and Azure, improving API response times by 32% through query optimization.</li>
+              <li>Normalized schemas and automated validation for 100,000+ records, reducing data consistency errors by 45%.</li>
+            </ul>
           </div>
         </article>
       </div>
     </section>
 
     <section id="skills">
-      <div class="section-head">
-        <h2>Skills</h2>
-        <p>AI engineering on a strong backend, cloud, and data foundation.</p>
-      </div>
-
+      <div class="section-head"><h2>Skills</h2></div>
       <div class="skills">
         <article class="panel">
-          <h3>AI & GenAI</h3>
-          <div class="quick-grid">
-            <span class="tag">LangChain</span>
-            <span class="tag">LlamaIndex</span>
-            <span class="tag">PyTorch</span>
-            <span class="tag">RAG</span>
-            <span class="tag">Agentic Workflows</span>
-            <span class="tag">Vector Search</span>
-            <span class="tag">pgvector</span>
-            <span class="tag">Qdrant</span>
-            <span class="tag">vLLM</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">LangSmith</span>
-            <span class="tag">Ragas</span>
+          <h3>AI & LLM</h3>
+          <div class="chips">
+            <span class="tag">LangChain</span><span class="tag">LlamaIndex</span><span class="tag">RAG</span><span class="tag">Agentic workflows</span>
+            <span class="tag">LLM evaluation</span><span class="tag">Ragas</span><span class="tag">LangSmith</span><span class="tag">pgvector</span>
+            <span class="tag">Qdrant</span><span class="tag">Vercel AI SDK</span><span class="tag">PyTorch</span><span class="tag">FastAPI</span>
           </div>
         </article>
-
         <article class="panel">
           <h3>Backend & Cloud</h3>
-          <div class="quick-grid">
-            <span class="tag">Python</span>
-            <span class="tag">Java</span>
-            <span class="tag">Go</span>
-            <span class="tag">SQL</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">gRPC</span>
-            <span class="tag">REST APIs</span>
-            <span class="tag">Microservices</span>
-            <span class="tag">AWS Lambda</span>
-            <span class="tag">ECS</span>
-            <span class="tag">DynamoDB</span>
-            <span class="tag">SQS</span>
-            <span class="tag">Azure OpenAI</span>
-            <span class="tag">AKS</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Kubernetes</span>
-            <span class="tag">Terraform</span>
+          <div class="chips">
+            <span class="tag">Python</span><span class="tag">Go</span><span class="tag">Java</span><span class="tag">TypeScript</span><span class="tag">SQL</span>
+            <span class="tag">gRPC</span><span class="tag">REST</span><span class="tag">Microservices</span><span class="tag">AWS Lambda</span><span class="tag">ECS</span>
+            <span class="tag">DynamoDB</span><span class="tag">Kinesis</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Terraform</span>
           </div>
         </article>
-
         <article class="panel">
-          <h3>Data, Testing & DevOps</h3>
-          <div class="quick-grid">
-            <span class="tag">Spark</span>
-            <span class="tag">PySpark</span>
-            <span class="tag">Kafka</span>
-            <span class="tag">Airflow</span>
-            <span class="tag">dbt</span>
-            <span class="tag">pytest</span>
-            <span class="tag">Locust</span>
-            <span class="tag">LLM Evaluation</span>
-            <span class="tag">CI/CD</span>
-            <span class="tag">Jenkins</span>
-            <span class="tag">CodePipeline</span>
-            <span class="tag">Prometheus</span>
-            <span class="tag">Grafana</span>
-            <span class="tag">CloudWatch</span>
+          <h3>Data & Delivery</h3>
+          <div class="chips">
+            <span class="tag">Kafka</span><span class="tag">Spark</span><span class="tag">PySpark</span><span class="tag">Airflow</span><span class="tag">dbt</span>
+            <span class="tag">pytest</span><span class="tag">Locust</span><span class="tag">CI/CD</span><span class="tag">Jenkins</span><span class="tag">CloudWatch</span>
+            <span class="tag">Prometheus</span><span class="tag">Grafana</span>
           </div>
         </article>
       </div>
     </section>
 
     <section>
-      <div class="section-head">
-        <h2>Education</h2>
-        <p>Data science graduate training on top of hands-on backend and cloud engineering.</p>
-      </div>
-
-      <div class="education">
+      <div class="section-head"><h2>Education</h2></div>
+      <div class="edu">
         <article class="panel">
           <h3>University of Maryland, College Park</h3>
-          <div class="meta">MS in Data Science | May 2026</div>
+          <div class="meta">MS in Data Science · May 2026</div>
         </article>
         <article class="panel">
           <h3>University of Mumbai</h3>
-          <div class="meta">BE in Electronics and Telecommunications | June 2022</div>
+          <div class="meta">BE in Electronics & Telecommunications · June 2022</div>
         </article>
       </div>
     </section>
 
-    <section class="contact" id="contact">
+    <section class="panel contact" id="contact">
       <div>
-        <div class="eyebrow">Open To Roles</div>
-        <h2>Looking for AI and backend engineering roles building production LLM systems.</h2>
-        <p>
-          If you are hiring for AI software engineering, backend, or ML platform roles, I would be glad to connect.
-          I am based in Tempe, AZ, open to relocate, and available for full-time work.
-        </p>
+        <span class="eyebrow">Open to roles</span>
+        <h2>Hiring for AI or backend engineering?</h2>
+        <p>I'm looking for full-time AI software engineering, backend, and ML platform roles. Based in Tempe, AZ and open to relocate.</p>
       </div>
       <div class="contact-links">
-        <a class="contact-link" href="mailto:giriktripathi2@gmail.com">
-          <strong>Email</strong>
-          <span>giriktripathi2@gmail.com</span>
-        </a>
-        <a class="contact-link" href="https://www.linkedin.com/in/girik-tripathi29/" target="_blank" rel="noreferrer">
-          <strong>LinkedIn</strong>
-          <span>girik-tripathi29</span>
-        </a>
-        <a class="contact-link" href="https://github.com/Girik2920" target="_blank" rel="noreferrer">
-          <strong>GitHub</strong>
-          <span>Girik2920</span>
-        </a>
-        <a class="contact-link" href="tel:2404621347">
-          <strong>Phone</strong>
-          <span>(240) 462-1347</span>
-        </a>
+        <a class="contact-link" href="mailto:giriktripathi2@gmail.com"><strong>Email</strong><span>giriktripathi2@gmail.com</span></a>
+        <a class="contact-link" href="https://www.linkedin.com/in/girik-tripathi29/" target="_blank" rel="noreferrer"><strong>LinkedIn</strong><span>girik-tripathi29</span></a>
+        <a class="contact-link" href="https://github.com/Girik2920" target="_blank" rel="noreferrer"><strong>GitHub</strong><span>Girik2920</span></a>
+        <a class="contact-link" href="resume.pdf" target="_blank" rel="noreferrer"><strong>Resume</strong><span>Download PDF</span></a>
       </div>
     </section>
 
-    <div class="footer mono">Built as a static site for GitHub Pages.</div>
+    <div class="footer">© 2026 Girik Tripathi</div>
   </main>
 </body>
 </html>
